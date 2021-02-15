@@ -1,18 +1,18 @@
 import React from 'react';
 
+import '../styles/ShopPage.css';
+
 const items = [
-    {id: 1, name: 'drum', price:52},
-    {id: 2, name: 'crash', price:20},
-    {id: 3, name: 'hi-hat', price:100},
-    {id: 4, name: 'tom', price:90},
-    {id: 5, name: 'tom-12', price:5},
+    {id: 1, name: 'crash-meinl-aa', img: '../images/shop/crash-meinl-aa.jpg', price:52},
+    {id: 2, name: 'crash-sabian-aax', img: '../images/shop/crash-sabian-aax.png', price:20},
 ]
 
 const ShopPage = () => {
     
     const menu = items.map(item => (
-        <div>
-            asd
+        <div className="item" key={item.id}>
+        <img className="item__img" src={item.img} alt={item.name}/>
+        <p className="item__title">{item.name}</p>
         </div>
     ))
     
@@ -23,6 +23,4 @@ const ShopPage = () => {
      );
     }
 
-
- 
 export default ShopPage;
