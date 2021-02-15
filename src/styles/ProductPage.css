@@ -1,0 +1,48 @@
+.product {
+  padding: 100px 50px;
+  display: flex;
+  width: 90vw;
+}
+
+.product__image {
+  width: 40%;
+}
+
+.product__textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.product__title {
+  padding-bottom: 40px;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 2.8rem;
+}
+
+.product__price {
+  font-size: 2.7rem;
+  color: white;
+}
+.product__span {
+  color: rgb(187, 42, 42);
+}
+
+.product__button {
+  width: 95px;
+  height: 50px;
+  background-color: #fff;
+  border: 1px solid black;
+  font-size: 2.4rem;
+  transform: translate(200%, 200%);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.product__button:hover {
+  background-color: rgb(175, 11, 11);
+  color: white;
+}
