@@ -11,7 +11,7 @@ const Page = () => {
     return ( 
         <Switch>
             <Route path="/" exact component={ShopPage}/>
-            <Route path="/product/:name/:price/:img" component={ProductPage}/>
+            <Route path="/product/:name/:price" component={ProductPage}/>
             <Route path="/contact" component={ContactPage}/>
             <Route path="/cart" component={CartPage}/>
             <Route component={ErrorPage}/>

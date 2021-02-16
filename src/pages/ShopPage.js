@@ -18,7 +18,7 @@ const items = [
 const ShopPage = () => {
     
     const menu = items.map(item => (
-        <Link className="item" to={`product/${item.name}/${item.price}/${item.img}`} key={item.id}>
+        <Link className="item" key={item.id} to={{pathname:`product/${item.name}/${item.price}`, state:{img:item.img}}} >
         <img className="item__img" src={item.img} alt={item.name}/>
         <p className="item__title">{item.name} <span className="item__price">${item.price}</span></p>
         </Link>
