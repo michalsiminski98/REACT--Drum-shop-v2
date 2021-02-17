@@ -14,6 +14,7 @@ class ContactPage extends Component{
         isMessageEmpty:true,
     }
 
+    // handlers check if form is in progress
     handleName = e => {
         if(e.target.value.length > 0){
             this.setState({
@@ -44,6 +45,7 @@ class ContactPage extends Component{
             isMessageEmpty: true})
     }
 
+    // this handle check and clean states and inputs if form is correctly fill
     handleSubmit = e => {
         e.preventDefault();
         if(!this.state.isNameEmpty && !this.state.isEmailEmpty && !this.state.isMessageEmpty){
@@ -76,6 +78,8 @@ class ContactPage extends Component{
                 </label>
                 <button onClick={this.handleSubmit} className="contact__button">Send</button>
             </form>
+
+            {/* exit page alert if form is in progress */}
             <Prompt
                 when={!this.state.isNameEmpty || !this.state.isEmailEmpty || !this.state.isMessageEmpty}
                 message="Are you sure you want to leave the form?"

@@ -11,19 +11,19 @@ const INITIAL_STATE = {
         {id: 7, name: 'Hi-Hat Istanbul Agop', img: 'https://thumbs.static-thomann.de/thumb/orig/pics/bdb/265124/13514976_800.jpg', price:350},
         {id: 8, name: 'Hi-Hat Zildjian K', img: 'https://www.prodrum.pl/dane/full/2/277275af701543caabf498f71c98d6ba.jpg', price:800},
         {id: 9, name: 'China Zildjian High', img: 'https://media.sweetwater.com/api/i/q-85__ha-d1025e51ec219d55__hmac-96cda30c0cbbe4e1ee9f86047608bcd0fa848ba4/images/items/1800/A0354-xlarge.jpg', price:280},
-    ], //{id, title, price, img}
-    cart: [], //{id, title, price, img, qty}
+    ], //{id, name, price, img}
+    cart: [], //{id, name, price, img, qty(QTY-QUANTITY)}
     currentItem: null,
 }
 
 const itemReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
-        case ActionTypes.ADD:
 
-        const item = state.products.find(prod => prod.id === action.payload.id);
+        // adding in specific item page
+        case ActionTypes.ADD:
+        const item = state.products.find(item => item.id === action.payload.id);
         // check if item is in cart already
         const inCart = state.cart.find(item => item.id === action.payload.id ? true : false)
-
         return {
             ...state,
             cart: inCart ?
@@ -33,24 +33,21 @@ const itemReducer = (state = INITIAL_STATE, action) => {
                 [...state.cart, {...item, qty:1}]
         };
 
+        // removing item in cart section
         case ActionTypes.REMOVE:
         return {
             ...state,
             cart:state.cart.filter(item => item.id !== action.payload.id)
         };
 
+        // decreasing/ increasing count of item in cart section
         case ActionTypes.ADJUST_QTY:
         return {
             ...state,
             cart: state.cart.map(item => item.id === action.payload.id ? {...item, qty: +action.payload.qty} : item)
         };
-
-        case ActionTypes.LOAD_CURRENT_ITEM:
-        return {
-            ...state,
-            currentItem: action.payload,
-        };
         
+        // other
         default:
             console.log(`Wrong action "${action.type}"`);
             return state;

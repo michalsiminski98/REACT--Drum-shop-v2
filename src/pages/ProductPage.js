@@ -5,7 +5,7 @@ import {addToCart} from '../actions/itemActions';
 
 import '../styles/ProductPage.css';
 
-const ProductPage = (props, addToCart) => {
+const ProductPage = (props) => {
     // I specially showed here 3 way of getting data 
     const {name} = props.match.params;
     const {img} = props.location.state;
@@ -26,6 +26,7 @@ const ProductPage = (props, addToCart) => {
      );
 }
 
+// adding product to cart
 const mapDispatchToProps = dispatch => {
     return{
     addToCart: (id) => dispatch(addToCart(id)),

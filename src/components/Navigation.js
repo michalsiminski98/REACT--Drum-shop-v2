@@ -14,16 +14,22 @@ const navigationList = [
 
 const Navigation = ({ cart }) => {
 
-    // counter of current items in cart
+    // counter of current products count in cart
     let cartCounter = 0;
     const cartCounterFunction = cart.map(item => {
         cartCounter += item.qty;
     });
 
-    // items in navigation
+    // showing navigation in function
     const menu = navigationList.map(item => (
         <li key={item.name} className="navigation__li">
-            <NavLink to={item.path} exact={item.exact && item.exact}>{item.name === 'cart' ? <span className="fas fa-shopping-cart"> {cartCounter} </span> : item.name}</NavLink>
+            <NavLink
+             to={item.path}
+            exact={item.exact && item.exact}
+            >
+                {/* if item is 'cart' replace it by icon */}
+                {item.name === 'cart' ? <span className="fas fa-shopping-cart"> {cartCounter !== 0 &&  cartCounter}</span> : item.name}
+            </NavLink>
         </li>
     ))
 
@@ -37,7 +43,7 @@ const Navigation = ({ cart }) => {
      );
 }
 
-// redux for items counter in cart
+// redux for counter of products in cart
 const mapStateToProps = state =>{
     return{
         cart: state.shop.cart,

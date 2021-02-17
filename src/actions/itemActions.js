@@ -1,5 +1,6 @@
 import * as ActionTypes from './itemTypes';
 
+// adding in specific item page
 export const addToCart = (itemID) => {
     return{
     type:ActionTypes.ADD,
@@ -8,6 +9,7 @@ export const addToCart = (itemID) => {
     }
 }}
 
+// removing item in cart section
 export const removeFromCart = (itemID) => ({
     type:ActionTypes.REMOVE,
     payload:{
@@ -15,15 +17,11 @@ export const removeFromCart = (itemID) => ({
     }
 })
 
+// decreasing/ increasing count of item in cart section
 export const adjustQty = (itemID, value) => ({
     type:ActionTypes.ADJUST_QTY,
     payload:{
         id : itemID,
         qty: value,
     }
-})
-
-export const LoadCurrentItem = (item) => ({
-    type:ActionTypes.LOAD_CURRENT_ITEM,
-    payload: item,
 })

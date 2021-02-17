@@ -23,6 +23,7 @@ const ShopPage = ({products}) => {
      );
     }
 
+    // redux for showing products from itemReducer.js
     const mapStateToProps = state => {
         return {
             products: state.shop.products,

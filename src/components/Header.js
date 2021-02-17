@@ -13,7 +13,7 @@ const Header = () => {
                 <Route path='/contact' render={()=>(
                     <div className="header__photo header--secondPhoto"></div>
                 )} />
-                <Route path='/cart' exact render={()=>(
+                <Route path='/cart' render={()=>(
                     <div className="header__photo header--secondPhoto"></div>
                 )} />
                 <Route render={()=>(
