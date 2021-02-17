@@ -52,7 +52,7 @@ const itemReducer = (state = INITIAL_STATE, action) => {
         };
         
         default:
-            console.alert(`Wrong action "${action.type}"`);
+            console.log(`Wrong action "${action.type}"`);
             return state;
     }
 }

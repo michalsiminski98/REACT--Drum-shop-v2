@@ -34,12 +34,17 @@
 }
 
 .contact__button {
+  color: black;
+  border: 1px solid black;
+  background-color: white;
   padding: 5px 8px;
   font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-@media (max-width: 767px) {
-  .contact__textArea {
-    width: 200px;
-  }
+.contact__button:hover {
+  color: white;
+  border-color: white;
+  background-color: black;
 }
