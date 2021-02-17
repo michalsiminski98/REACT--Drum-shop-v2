@@ -25,22 +25,35 @@ const CartPage = ({ cart, removeFromCart, adjustQty }) => {
                     <p className="cartWrapper__price">${item.price}</p>
                     <input onChange={(e) => {
                         adjustQty(item.id, e.target.value)
-                        if(e.target.value === 0) e.target.value = 1}} min='1' max='6' type="number" className="cartWrapper__count" value={item.qty}/>
-                    <i onClick={() => removeFromCart(item.id)}  className="fas fa-trash-alt cartWrapper__trash"></i>
+                        if(e.target.value === 0) e.target.value = 1}}
+                    min='1'
+                    max='6'
+                    type="number"
+                    className="cartWrapper__count"
+                    value={item.qty}
+                    />
+                    <i 
+                    onClick={() => removeFromCart(item.id)}  
+                    className="fas fa-trash-alt cartWrapper__trash">
+                    </i>
             </div>
         </div>
     ));
-
     return( 
         <section className="cartWrapper">
             {showingBuyingItem}
-            <div className="cartWrapper__totalStats">
-                <p className="cartWrapper__totalcount">Total count: {itemsSummary}</p>
-                <p className="cartWrapper__totalprice">Total price: ${priceSummary}</p>
-            </div>
-            <button className="cartWrapper__button">
-                Order
-            </button>
+            {showingBuyingItem.length !== 0 && (
+                <>
+                    <div className="cartWrapper__totalStats">
+                    <p className="cartWrapper__totalcount">Total count: {itemsSummary}</p>
+                    <p className="cartWrapper__totalprice">Total price: ${priceSummary}</p>
+                    </div>
+                    <button className="cartWrapper__button">
+                        Order
+                    </button>
+                </>
+            )}
+
         </section>
      );}
  

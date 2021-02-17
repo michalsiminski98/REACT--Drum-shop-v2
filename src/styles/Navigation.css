@@ -18,7 +18,7 @@
 }
 .navigation__li a {
   text-decoration: none;
-  color: #333333;
+  color: #222;
 }
 
 .navigation__li a.active {
@@ -27,4 +27,5 @@
 
 .navigation__li a:hover {
   color: #000;
+  text-decoration: underline;
 }

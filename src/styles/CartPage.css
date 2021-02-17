@@ -28,8 +28,8 @@
 }
 
 .cartWrapper__photo {
-  max-width: 300px;
-  max-height: 300px;
+  width: 250px;
+  height: 250px;
 }
 
 .cartWrapper__name {
@@ -57,7 +57,7 @@
 .cartWrapper__button {
   margin: 20px auto;
   flex-basis: 100px;
-  padding: 30px;
+  height: 60px;
   font-size: 2rem;
   border: 1px solid black;
   background-color: white;

@@ -1,11 +1,13 @@
 .product {
   padding: 100px 50px;
   display: flex;
-  width: 90vw;
+  width: 70vw;
+  margin: 0 auto;
 }
 
 .product__image {
-  width: 40%;
+  width: 400px;
+  height: 400px;
 }
 
 .product__textWrapper {
