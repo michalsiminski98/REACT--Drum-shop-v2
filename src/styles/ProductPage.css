@@ -1,7 +1,7 @@
 .product {
-  padding: 100px 50px;
   display: flex;
   width: 70vw;
+  padding: 100px 50px;
   margin: 0 auto;
 }
 
@@ -20,9 +20,9 @@
 
 .product__title {
   padding-bottom: 40px;
+  font-size: 2.8rem;
   color: white;
   letter-spacing: 1px;
-  font-size: 2.8rem;
 }
 
 .product__price {
@@ -34,12 +34,12 @@
 }
 
 .product__button {
+  transform: translate(200%, 200%);
   width: 95px;
   height: 50px;
+  font-size: 2.4rem;
   background-color: #fff;
   border: 1px solid black;
-  font-size: 2.4rem;
-  transform: translate(200%, 200%);
   cursor: pointer;
   transition: 0.2s;
 }

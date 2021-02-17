@@ -21,19 +21,19 @@ const itemReducer = (state = INITIAL_STATE, action) => {
 
         // adding in specific item page
         case ActionTypes.ADD:
-        const item = state.products.find(item => item.id === action.payload.id);
+        const item = state.products.find(product => product.id === action.payload.id);
         // check if item is in cart already
-        const inCart = state.cart.find(item => item.id === action.payload.id ? true : false)
+        const inCart = state.cart.find(product => product.id === action.payload.id ? true : false)
         return {
             ...state,
             cart: inCart ?
-                state.cart.map(item =>
-                item.id === action.payload.id ? 
-                {...item, qty: item.qty + 1} : item) : 
-                [...state.cart, {...item, qty:1}]
+            state.cart.map(item =>
+            item.id === action.payload.id ? 
+            {...item, qty: item.qty + 1} : item) : 
+            [...state.cart, {...item, qty:1}]
         };
 
-        // removing item in cart section
+        // removing item from cart section
         case ActionTypes.REMOVE:
         return {
             ...state,

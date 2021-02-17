@@ -6,8 +6,6 @@ import Navigation from './Navigation';
 import Page from './Page';
 import Footer from './Footer';
 
-import '../styles/App.css';
-
 class App extends React.Component {
 
     render(){

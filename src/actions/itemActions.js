@@ -1,13 +1,12 @@
 import * as ActionTypes from './itemTypes';
 
-// adding in specific item page
-export const addToCart = (itemID) => {
-    return{
+// adding product from ProductPage.js
+export const addToCart = (itemID) => ({
     type:ActionTypes.ADD,
     payload:{
         id : itemID,
     }
-}}
+})
 
 // removing item in cart section
 export const removeFromCart = (itemID) => ({

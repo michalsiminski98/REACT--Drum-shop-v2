@@ -7,9 +7,9 @@ import '../styles/CartPage.css';
 
 const CartPage = ({ cart, removeFromCart, adjustQty }) => {
 
+    // counters of total price and total products quantity
     let itemsSummary = 0;
     let priceSummary = 0;
-
     const totalItemsSummary = cart.map(item => (
         itemsSummary += item.qty
     ));
@@ -39,31 +39,31 @@ const CartPage = ({ cart, removeFromCart, adjustQty }) => {
             </div>
         </div>
     ));
+
     return( 
         <section className="cartWrapper">
             {showingBuyingItem}
+            {/* dont show anything if cart is empty */}
             {showingBuyingItem.length !== 0 && (
                 <>
                     <div className="cartWrapper__totalStats">
-                    <p className="cartWrapper__totalcount">Total count: {itemsSummary}</p>
-                    <p className="cartWrapper__totalprice">Total price: ${priceSummary}</p>
+                        <p className="cartWrapper__totalcount">Total count: {itemsSummary}</p>
+                        <p className="cartWrapper__totalprice">Total price: ${priceSummary}</p>
                     </div>
                     <button className="cartWrapper__button">
                         Order
                     </button>
                 </>
             )}
-
         </section>
      );}
  
+// global storage of cart
+const mapStateToProps = state => ({
+    cart: state.shop.cart
+});
 
-     const mapStateToProps = state => {
-         return{
-             cart: state.shop.cart
-         }
-     }
-
+// remove and counter 
 const mapDispatchToProps = dispatch => ({
     removeFromCart: (id) => dispatch(removeFromCart(id)),
     adjustQty: (id, value) => dispatch(adjustQty(id, value)),

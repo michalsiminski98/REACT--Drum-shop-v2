@@ -4,12 +4,12 @@
   margin: 0 auto;
 }
 .header__photo {
-  background-size: cover;
-  background-color: black;
-  background-position: center 50%;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
 }
 
 .header--firstPhoto {
@@ -21,10 +21,10 @@
 }
 
 .header__photo::after {
-  content: "";
   display: block;
-  background-color: black;
+  content: "";
   width: 100%;
   height: 100%;
+  background-color: black;
   opacity: 0.3;
 }

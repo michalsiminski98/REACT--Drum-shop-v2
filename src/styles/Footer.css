@@ -4,8 +4,8 @@
   background-color: #262a30;
 }
 .footer__text {
+  line-height: 80px;
+  text-align: center;
   font-size: 2rem;
   color: white;
-  text-align: center;
-  line-height: 80px;
 }

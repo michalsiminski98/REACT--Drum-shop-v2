@@ -9,9 +9,9 @@
 .cartWrapper__item {
   display: flex;
   flex-basis: 100%;
-  margin: 2% 4%;
   height: 250px;
   padding: 15px 0;
+  margin: 2% 4%;
   border-top: 2px solid rgb(202, 202, 202);
   border-bottom: 2px solid rgb(202, 202, 202);
 }
@@ -21,10 +21,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 100px;
   font-size: 2.5rem;
   color: rgb(236, 236, 236);
-  margin-left: 100px;
-  text-align: center;
 }
 
 .cartWrapper__photo {
@@ -46,18 +45,18 @@
   margin-top: 20px;
   font-size: 2.7rem;
   color: rgb(131, 25, 25);
-  transition: 0.7s;
   cursor: pointer;
+  transition: 0.7s;
 }
 .cartWrapper__trash:hover {
-  color: rgb(238, 9, 9);
   transform: rotate(360deg);
+  color: rgb(238, 9, 9);
 }
 
 .cartWrapper__button {
-  margin: 20px auto;
   flex-basis: 100px;
   height: 60px;
+  margin: 20px auto;
   font-size: 2rem;
   border: 1px solid black;
   background-color: white;

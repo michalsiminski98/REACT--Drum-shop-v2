@@ -17,8 +17,8 @@
   font-size: 2.4rem;
 }
 .navigation__li a {
-  text-decoration: none;
   color: #222;
+  text-decoration: none;
 }
 
 .navigation__li a.active {
