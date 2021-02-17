@@ -11,7 +11,6 @@ const ProductPage = (props, addToCart) => {
     const {img} = props.location.state;
     const {prod} = props.location.state.productData;
 
-console.log(addToCart);
     return ( 
         <>
         <section className="product">
