@@ -17,15 +17,19 @@ const CartPage = ({ cart, removeFromCart, adjustQty }) => {
         priceSummary += item.price * item.qty
     ));
 
+    // add number of item
+    const handleAddNumberOfItem = (item, e) => {
+            adjustQty(item.id, e.target.value);
+            if(e.target.value === 0) e.target.value = 1;
+    };
+
     const showingBuyingItem = cart.map(item => (
         <div key={item.id} className="cartWrapper__item">
             <img src={item.img} alt="item" className="cartWrapper__photo"/>
             <div className="cartWrapper__textWrapper">
                     <p className="cartWrapper__name">{item.name}</p>
                     <p className="cartWrapper__price">${item.price}</p>
-                    <input onChange={(e) => {
-                        adjustQty(item.id, e.target.value)
-                        if(e.target.value === 0) e.target.value = 1}}
+                    <input onChange={handleAddNumberOfItem.bind(this, item)}
                     min='1'
                     max='6'
                     type="number"
