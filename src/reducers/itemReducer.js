@@ -23,7 +23,7 @@ const itemReducer = (state = INITIAL_STATE, action) => {
         case ActionTypes.ADD:
         const item = state.products.find(product => product.id === action.payload.id);
         // check if item is in cart already
-        const inCart = state.cart.find(product => product.id === action.payload.id ? true : false)
+        const inCart = state.cart.find(product => product.id === action.payload.id)
         return {
             ...state,
             cart: inCart ?

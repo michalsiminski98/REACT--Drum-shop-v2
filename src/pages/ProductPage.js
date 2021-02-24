@@ -12,7 +12,6 @@ const ProductPage = (props) => {
     const {prod} = props.location.state.productData;
 
     return ( 
-        <>
         <section className="product">
             <img src={img} alt={name} className="product__image"/>
             <div className="product__textWrapper">
@@ -21,8 +20,6 @@ const ProductPage = (props) => {
             <button onClick={() => props.addToCart(prod.id)} className="product__button">Buy</button>
             </div>
         </section>
-
-        </>
      );
 }
 
