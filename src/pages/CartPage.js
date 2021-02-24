@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CartItem from './componentForPages/CartItem'
+
 import { connect } from 'react-redux';
 import { removeFromCart, adjustQty } from '../actions/itemActions';
 
@@ -23,42 +25,13 @@ const CartPage = ({ cart, removeFromCart, adjustQty }) => {
             if(e.target.value === 0) e.target.value = 1;
     };
 
-    const showingBuyingItem = cart.map(item => (
-        <div key={item.id} className="cartWrapper__item">
-            <img src={item.img} alt="item" className="cartWrapper__photo"/>
-            <div className="cartWrapper__textWrapper">
-                    <p className="cartWrapper__name">{item.name}</p>
-                    <p className="cartWrapper__price">${item.price}</p>
-                    <input onChange={handleAddNumberOfItem.bind(this, item)}
-                    min='1'
-                    max='6'
-                    type="number"
-                    className="cartWrapper__count"
-                    value={item.qty}
-                    />
-                    <i 
-                    onClick={() => removeFromCart(item.id)}  
-                    className="fas fa-trash-alt cartWrapper__trash">
-                    </i>
-            </div>
-        </div>
-    ));
-
     return( 
         <section className="cartWrapper">
-            {showingBuyingItem}
-            {/* dont show anything if cart is empty */}
-            {showingBuyingItem.length !== 0 && (
-                <>
-                    <div className="cartWrapper__totalStats">
-                        <p className="cartWrapper__totalcount">Total count: {itemsSummary}</p>
-                        <p className="cartWrapper__totalprice">Total price: ${priceSummary}</p>
-                    </div>
-                    <button className="cartWrapper__button">
-                        Order
-                    </button>
-                </>
-            )}
+            <CartItem
+            cart = {cart}
+            addNumber = {handleAddNumberOfItem}
+            removeFromCart = {removeFromCart}
+            />
         </section>
      );}
  
