@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import '../styles/ShopPage.css';
 
-
 const ShopPage = ({products}) => {
     
     return ( 

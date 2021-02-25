@@ -39,7 +39,6 @@ const CartPage = ({ cart, removeFromCart, adjustQty }) => {
 const mapStateToProps = state => ({
     cart: state.shop.cart
 });
-
 // remove and counter 
 const mapDispatchToProps = dispatch => ({
     removeFromCart: (id) => dispatch(removeFromCart(id)),

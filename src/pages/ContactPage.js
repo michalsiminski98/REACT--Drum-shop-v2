@@ -60,8 +60,7 @@ class ContactPage extends Component{
         alert('Message sent!');
     }
     else alert('Fill the form!');
-    }
-    
+    }  
 
     render(){
     return ( 
